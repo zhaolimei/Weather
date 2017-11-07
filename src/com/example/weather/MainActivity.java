@@ -56,6 +56,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         //更新按钮
         mUpdateBtn=(ImageView)findViewById(R.id.title_update_btn);
         mUpdateBtn.setOnClickListener(this);
+        
+ 
         /*
         //检测网络连接
         if (NetUtil.getNetworkState(this)!=NetUtil.NETWORN_NONE){
@@ -115,7 +117,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
     		Log.d("myWeather",cityCode);
     		
     		queryWeatherCode(cityCode);
-    	/*	
+    		
+    		/*
     		if(NetUtil.getNetworkState(this)!=NetUtil.NETWORN_NONE){
     			Log.d("myWeather", "网络OK");
     			queryWeatherCode(cityCode);
@@ -124,7 +127,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
     			Log.d("myWeather", "网络挂了");
     			Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
     		}
-    	*/
+    		*/
+    		
+    	
     	}
     }
     //接收返回数据
