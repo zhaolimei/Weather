@@ -24,8 +24,8 @@ public class MyApplication extends Application{
 	@Override
 	public void onCreate(){
 		super.onCreate();
+		//数据库读数据citydb
 		Log.d(TAG, "MyApplication->Oncreate");
-
 		mApplication = this;
 		mCityDB=openCityDB();
 		initCityList();
