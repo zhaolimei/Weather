@@ -107,6 +107,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
 	public void onClick(View view){
 		if(view.getId()==R.id.title_city_manager){
 			Intent i=new Intent(this,SelectCity.class);
+			Bundle bundle = new Bundle();
+			bundle.putString("currentCity", city_name_Tv.getText().toString());//传递当前城市到selectcity
+			i.putExtras(bundle);
 			//startActivity(i);
 			//跳转到selectcity并获得回传数据
 			startActivityForResult(i,1);
