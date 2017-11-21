@@ -48,9 +48,9 @@
                 android:id="@+id/selectcity_search"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="@drawable/contact_search_box_edittext_keyword_background"
+
                 android:hint=" 搜索全国城市（中文） "
-                android:padding="35.0dp"
+                android:padding="1.0dp"
                 android:singleLine="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true">
@@ -58,7 +58,7 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_height="45dp"
-            android:layout_width="80dp"
+            android:layout_width="45dp"
             android:id="@+id/selectcity_search_buttonrela"
             android:layout_alignParentRight="true">
             <ImageView
