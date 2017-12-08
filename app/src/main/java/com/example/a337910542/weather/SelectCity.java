@@ -29,6 +29,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
 	private String updateCityCode;//点击的城市代码
 	private ArrayAdapter<String> adapter;
 	private TextView currentCity;
+	private int selectFlag;
 
 
 	@Override
@@ -45,6 +46,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
 		mCityList=myApplication.getCityList();//获取城市列表
 		mArryList =new ArrayList<String>();
 		currentCity=(TextView)findViewById(R.id.title_name);
+		selectFlag=0;
 
 		Bundle bundle = getIntent().getExtras();//获取MainActivity天气首页传递的当前城市
 		currentCity.setText(bundle.getString("currentCity")); //读出当前城市
@@ -66,6 +68,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
 			public void onItemClick(AdapterView<?>parent,View view,int position, long id){
 				updateCityCode = mCityList.get(position).getNumber();
 				Toast.makeText(SelectCity.this,mCityList.get(position).getCity(),Toast.LENGTH_SHORT).show();
+				selectFlag=1;
 				//Log.d("update city code",Integer.toString(updateCityCode));
 			}
 		};
@@ -104,6 +107,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
 							}
 						}
 						Toast.makeText(SelectCity.this,mSearchList.get(position),Toast.LENGTH_SHORT).show();
+						selectFlag=1;
 						//Log.d("update city code",Integer.toString(updateCityCode));
 					}
 				};
@@ -116,6 +120,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
 
 			case R.id.title_back:
 				Intent i=new Intent();
+				i.putExtra("selectFlag",selectFlag);
 				i.putExtra("cityCode",updateCityCode);
 				setResult(RESULT_OK,i);
 				finish();
