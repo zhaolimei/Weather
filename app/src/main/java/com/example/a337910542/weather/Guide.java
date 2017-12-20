@@ -36,11 +36,13 @@ public class Guide extends Activity implements ViewPager.OnPageChangeListener{
         SharedPreferences sharedPreferences = getSharedPreferences("viewpagedate",Activity.MODE_PRIVATE);
         if(sharedPreferences.getInt("time",0)==8)//
         {
-            Intent intent = new Intent(Guide.this,MainActivity.class);
+            Log.d("test", "直接进入");
+            Intent intent = new Intent(Guide.this,Locate.class);
             startActivity(intent);
             finish();
         }else {
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            Log.d("test", "导航页");
             editor.putInt("time", 8);//0
             editor.commit();
         }
@@ -51,7 +53,7 @@ public class Guide extends Activity implements ViewPager.OnPageChangeListener{
         startB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Guide.this,MainActivity.class);
+                Intent intent = new Intent(Guide.this,Locate.class);
                 startActivity(intent);
                 finish();
             }
